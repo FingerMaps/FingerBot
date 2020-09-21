@@ -1,7 +1,7 @@
 const fs = require("fs")
 const Discord = require("discord.js")
 const express = require("express")
-const {prefix,channelIDs,roleIDs} = require("./config.json")
+const {prefix,channelIDs,roleIDs,reactionRoles} = require("./config.json")
 require("dotenv").config()
 
 const client = new Discord.Client()
@@ -55,6 +55,20 @@ client.on("message", message => {
 client.on('guildMemberAdd', member => {
     client.channels.cache.get(channelIDs.joinLeave).send(`Hey <@${member.id}>, welcome to the FingerMaps Official Discord Server!`)
     member.roles.add(member.guild.roles.cache.find(role=>role.id==roleIDs.member)).catch(error=>console.error(error))
+})
+
+// reaction roles
+client.on("messageReactionAdd", async (reaction,user) => {
+	console.log("hi")
+	if (reaction.message.partial) await reaction.message.fetch()
+	if (reaction.partial) await reaction.fetch()
+	if (reaction.message.guild && Object.keys(reactionRoles).includes(reaction.emoji.name) && reaction.message.channel.id==channelIDs.information) reaction.message.guild.members.cache.get(user.id).roles.add(reactionRoles[reaction.emoji.name])
+})
+client.on("messageReactionRemove", async (reaction,user) => {
+	console.log("hi")
+	if (reaction.message.partial) await reaction.message.fetch()
+	if (reaction.partial) await reaction.fetch()
+	if (reaction.message.guild && Object.keys(reactionRoles).includes(reaction.emoji.name) && reaction.message.channel.id==channelIDs.information) reaction.message.guild.members.cache.get(user.id).roles.remove(reactionRoles[reaction.emoji.name])
 })
 
 client.login(process.env.discordtoken)

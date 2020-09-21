@@ -1,10 +1,17 @@
 {
     "prefix": "-",
+    "color": 16711680,
     "channelIDs": {
-        "joinLeave": "735646029432619010"
+        "joinLeave": "735646029432619010",
+        "information": "750931104244039701"
     },
     "roleIDs": {
-        "member": "735645759549997117"
+        "member": "735645759549997117",
+        "team": "735643269018681465"
+    },
+    "reactionRoles": {
+        "📢": "754010510994833530",
+        "📷": "754008239430959104"
     },
     "rules": {
         "1": "Follow Discord TOS and Guidelines (<https://discord.com/tos> | <https://discord.com/guidelines>)",
