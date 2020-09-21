@@ -1,5 +1,6 @@
 const fs = require("fs")
 const Discord = require("discord.js")
+const express = require("express")
 const {prefix,channelIDs,roleIDs} = require("./config.json")
 require("dotenv").config()
 
@@ -57,3 +58,8 @@ client.on('guildMemberAdd', member => {
 })
 
 client.login(process.env.discordtoken)
+
+// webserver to keep bot alive
+const server = express()
+server.all ( "/", (req, res) => res.send("Thanks for waking up FingerBot!") )
+server.listen ( 3000, () => console.log("server running") )
