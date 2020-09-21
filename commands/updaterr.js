@@ -1,7 +1,7 @@
 const {roleIDs,channelIDs,color} = require("../config.json")
 
 module.exports = {
-    name: "bedrock",
+    name: "updaterr",
     cooldown: 5,
     execute (message, args) {
         if (message.member.roles.cache.some(role=>role.id==roleIDs.team)) {
