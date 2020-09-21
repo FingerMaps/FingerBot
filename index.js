@@ -59,13 +59,11 @@ client.on('guildMemberAdd', member => {
 
 // reaction roles
 client.on("messageReactionAdd", async (reaction,user) => {
-	console.log("hi")
 	if (reaction.message.partial) await reaction.message.fetch()
 	if (reaction.partial) await reaction.fetch()
 	if (reaction.message.guild && Object.keys(reactionRoles).includes(reaction.emoji.name) && reaction.message.channel.id==channelIDs.information) reaction.message.guild.members.cache.get(user.id).roles.add(reactionRoles[reaction.emoji.name])
 })
 client.on("messageReactionRemove", async (reaction,user) => {
-	console.log("hi")
 	if (reaction.message.partial) await reaction.message.fetch()
 	if (reaction.partial) await reaction.fetch()
 	if (reaction.message.guild && Object.keys(reactionRoles).includes(reaction.emoji.name) && reaction.message.channel.id==channelIDs.information) reaction.message.guild.members.cache.get(user.id).roles.remove(reactionRoles[reaction.emoji.name])
