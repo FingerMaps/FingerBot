@@ -1,6 +1,6 @@
 const fs = require("fs")
 const Discord = require("discord.js")
-const {prefix,joinLeaveChannelID,memberRoleID} = require("./config.json")
+const {prefix,channelIDs,roleIDs} = require("./config.json")
 require("dotenv").config()
 
 const client = new Discord.Client()
@@ -52,8 +52,8 @@ client.on("message", message => {
 
 // join message
 client.on('guildMemberAdd', member => {
-    client.channels.cache.get(joinLeaveChannelID).send(`Hey <@${member.id}>, welcome to the FingerMaps Official Discord Server!`)
-    member.roles.add(member.guild.roles.cache.find(role=>role.id==memberRoleID)).catch(error=>console.error(error))
+    client.channels.cache.get(channelIDs.joinLeave).send(`Hey <@${member.id}>, welcome to the FingerMaps Official Discord Server!`)
+    member.roles.add(member.guild.roles.cache.find(role=>role.id==roleIDs.member)).catch(error=>console.error(error))
 })
 
 client.login(process.env.discordtoken)

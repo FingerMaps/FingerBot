@@ -1,5 +1,19 @@
 {
-    "prefix":"-",
-    "joinLeaveChannelID": "735646029432619010",
-    "memberRoleID": "735645759549997117"
+    "prefix": "-",
+    "channelIDs": {
+        "joinLeave": "735646029432619010"
+    },
+    "roleIDs": {
+        "member": "735645759549997117"
+    },
+    "rules": {
+        "1": "Follow Discord TOS and Guidelines (<https://discord.com/tos> | <https://discord.com/guidelines>)",
+        "2": "NSFW is not allowed. This includes messages, images, profile pictures, username and Status. If you send something NSFW the message will be deleted and you will be banned from the server.",
+        "3": "Avoid speaking other languages than English because we may not understand it.",
+        "4": "Be respectful. This includes no swearing.",
+        "5": "No spamming. Do not start or continue emoji trains, message trains, etc.",
+        "6": "Only ping when necessary.",
+        "7": "Don't ask to ask, just ask.\n<https://dontasktoask.com/>",
+        "8": "Only Email when necessary."
+    }
 }
