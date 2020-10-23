@@ -4,7 +4,7 @@ const express = require("express")
 const {prefix,channelIDs,roleIDs,reactionRoles} = require("./config.json")
 require("dotenv").config()
 
-const client = new Discord.Client()
+const client = new Discord.Client({partials: ["MESSAGE","CHANNEL","REACTION"]})
 client.commands = new Discord.Collection()
 module.exports.client = client
 
