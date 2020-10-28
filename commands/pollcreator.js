@@ -5,7 +5,7 @@ module.exports = {
     cooldown: 5,
     execute (message, args) {
 
-		if ( message.guild==null || message.member.roles.cache.some(role=>role.id==roleIDs.team) || true) {
+		if ( message.guild==null || message.member.roles.cache.some(role=>role.id==roleIDs.team) ) {
 
 			message.react("✅")
 
