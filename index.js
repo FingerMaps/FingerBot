@@ -17,7 +17,7 @@ const cooldowns = new Discord.Collection()
 
 client.once("ready", () => {
 	console.log("bot running")
-	client.user.setActivity("Floreign Complex")
+	client.user.setActivity("Solar Swarm")
 })
 
 client.on("message", message => {
