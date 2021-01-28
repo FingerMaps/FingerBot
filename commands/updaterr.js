@@ -20,9 +20,17 @@ module.exports = {
 							name: "📷",
 							value: "Sneakpeeks",
 							inline: true
+						},
+						{
+							name: "🏁",
+							value: "Events",
+							inline: true
 						}
 					]
-				}}).then(()=>message.react("✅"))
+				}}).then(()=>{
+					message.react("✅")
+					msg.react("🏁")
+				})
 			})
 		} else message.react("🚫")
     }
